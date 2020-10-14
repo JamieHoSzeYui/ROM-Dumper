@@ -1,6 +1,10 @@
 name: Dump ROM
  
-#on: push
+on: push
+
+env:
+  URL: https://cfhcable.dl.sourceforge.net/project/wightroms//joyeuse/nitrogen/Nitrogen-OS-11-miatoll-20201010.zip
+
 
 jobs:
   build:
