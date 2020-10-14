@@ -1,6 +1,5 @@
 #!/bin/bash
 
-###############################
 OUTDIR=$1 
 MYPATH=`cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd`
 if [[ $(ls $1 / grep system) ]]; then
