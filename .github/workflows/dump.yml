@@ -35,7 +35,7 @@ jobs:
          run: |
               cd extract
               ./extractor.sh input/*
-              wget /,script link>
+              wget https://raw.githubusercontent.com/JamieHoSzeYui/ROM-Dumper/main/pack.sh
               sudo ./pack.sh out
               
        - name: cat download link
