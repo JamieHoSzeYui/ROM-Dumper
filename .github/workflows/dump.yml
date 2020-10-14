@@ -31,7 +31,8 @@ jobs:
          run: |
               cd extract
               ./extractor.sh input/*
-              sudo ./pack.sh
+              wget /,script link>
+              sudo ./pack.sh out
               
        - name: cat download link
          run: cat extract/out/links.txt
