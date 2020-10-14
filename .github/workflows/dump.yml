@@ -1,0 +1,38 @@
+name: Dump ROM
+ 
+#on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 525600
+
+    steps:
+       - name: Checkouts
+         uses: actions/checkout@master
+         
+       - name: Initializing environments
+         run: |
+              sudo apt install wget 
+              wget https://raw.githubusercontent.com/erfanoabdi/ErfanGSIs/master/setup.sh
+              bash setup.sh
+              rm setup.sh 
+              
+       - name: Download your rom
+         run: |
+              git clone -q --recurse-submodules https://github.com/erfanoabdi/Firmware_extractor extract 2>/dev/null
+              echo "Downloading ROM .."
+              cd extract
+              mkdir input
+              wget $URL -P input/ 2>/dev/null 
+              echo "Download done !"
+              
+       - name: Dump ROM
+         run: |
+              cd extract
+              ./extractor.sh input/*
+              sudo ./pack.sh
+              
+       - name: cat download link
+         run: cat extract/out/links.txt
+              
