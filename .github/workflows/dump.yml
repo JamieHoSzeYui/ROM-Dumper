@@ -37,6 +37,7 @@ jobs:
               ./extractor.sh input/*
               wget https://raw.githubusercontent.com/JamieHoSzeYui/ROM-Dumper/main/pack.sh
               sudo -s
+              chmod -R 0777 *
               ./pack.sh out
               
        - name: cat download link
